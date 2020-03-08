@@ -1,11 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class GameManager : MonoBehaviour
+using UnityEngine.UI;
+public class PopDisplay : MonoBehaviour
 {
-    Transform[][] tileMap;
-    Transform[] pathStack;
+    [SerializeField] Text t;
+    [SerializeField] GameManager gm;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +15,6 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        t.text = "Population:" + gm.population;
     }
 }

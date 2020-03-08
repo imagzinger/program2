@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.AI;
 using UnityEngine;
 
 public class PersonController : MonoBehaviour
@@ -8,6 +9,7 @@ public class PersonController : MonoBehaviour
     bool gettingWater = false;
     bool shopping = false;
     bool homeless = true;
+    public NavMeshAgent agent;
 
     // Start is called before the first frame update
     void Start()
@@ -37,10 +39,11 @@ public class PersonController : MonoBehaviour
         //come back
     }
 
-    public void GoHome(Transform housePosition)
+    public void GoTo(Vector3 destination)
     {
-
+        agent.SetDestination(destination);
     }
+
 
     //private FindBestRouteA()
     //{}

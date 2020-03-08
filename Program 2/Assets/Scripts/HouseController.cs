@@ -7,9 +7,10 @@ public class HouseController : MonoBehaviour
     public int pints = 0;
     public int meals = 0;
     public int maxNPC = 2;
+    
 
-    [SerializeField] GameObject[] household = new GameObject[6];
-    [SerializeField] int NPCs = 0;
+    public GameObject[] household = new GameObject[6];
+    public int NPCs = 0;
     [SerializeField] Material needWater;
     [SerializeField] Material needFood;
     [SerializeField] Material needNPC;
@@ -68,17 +69,26 @@ public class HouseController : MonoBehaviour
 
 		
     }
+    public bool IsFull()
+    {
+        Debug.Log(NPCs);
+        return (NPCs >= maxNPC);
+    }
     void GetFood() 
     { //assign person to get food
-       // household[1].Shop();
+        //household[1].Shop();
+        meals += 100;
     }
     void GetWater() 
-    { //assign person to get water
-       // household[0].BringWater();
+    { //assign persond  to get water
+      // household[0].BringWater();
+        pints += 20;
     }
     void Feed() 
     {
         //subtract 1 water and 1 food
+        meals--;
+        pints--;
     }
 
     
